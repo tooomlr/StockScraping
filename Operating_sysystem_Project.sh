@@ -2,6 +2,8 @@
 ID_TELEGRAM="-1001559066781"
 TOKEN="5851033018:AAFCWVCnkV1hr74JoioBbsEgAhLik81oqo8"
 current_hour=$(date +%m-%d-%Y-%T)
+url='https://www.cnbc.com/quotes/FDS?qsearchterm=fds'
+output=price.txt
 #Function for grep and save data
 function strip_html(){
   grep -oP '(?<=<span class="QuoteStrip-lastPrice").*?(?=</span>)' $output >temp.txt 
@@ -23,10 +25,23 @@ function print(){
    curl --data chat_id=$ID_TELEGRAM --data-urlencode "text= $message" "https://api.telegram.org/bot$TOKEN/sendMessage?parse_mode=HTML" 
  }
 
-
-url='https://www.cnbc.com/quotes/FDS?qsearchterm=fds'
-output=price.txt
+function day(){
+if [ "$current_hour" == "23:59" ]
+then
 touch $output temp.txt
 curl -o $output $url 
 strip_html  
 print
+fi
+}
+
+while true
+do
+touch $output temp.txt
+curl -o $output $url 
+strip_html  
+print
+day
+sleep 60
+done
+
