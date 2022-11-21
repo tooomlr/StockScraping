@@ -1,6 +1,6 @@
 #SECRETS TOKEN 
-ID_TELEGRAM="-1001559066781"
-TOKEN="5851033018:AAFCWVCnkV1hr74JoioBbsEgAhLik81oqo8"
+ID_TELEGRAM=""
+TOKEN=""
 current_hour=$(date +%m-%d-%Y-%T)
 url='https://www.cnbc.com/quotes/FDS?qsearchterm=fds'
 output=price.txt
