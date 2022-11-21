@@ -27,4 +27,4 @@ Set Up a bot on Telegram :
 
 # Exemple : 
 
-![Exemple](exemple/exemple.png)
+![Exemple](exemple/exemple.PNG)
