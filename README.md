@@ -7,7 +7,7 @@ Once the script is launched we will receive every minute the price of the $FDS s
 
 Clone:
 ```
-git clone <repo_url>
+git clone URL
 ```
 Enable script execution :
 ```
