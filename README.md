@@ -1,5 +1,5 @@
 # StockScraping
-This project allows to scrape the price of a share on the site by URL.
+This Bash script scrape the price of a share on the site by URL.
 
 Once the script is launched we will receive every minute the price of the $FDS share on telegram.
 
