@@ -30,4 +30,4 @@ Set Up a bot on Telegram :
 ![Exemple](exemple/exemple.PNG)
 
 # Exemple Logs : 
-![Exemple](exemple/exemple2.PNG)
+![Exemple](exemple/exemple2.png)
