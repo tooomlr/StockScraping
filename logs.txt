@@ -1,0 +1,5 @@
+11-30-2022-16:29:28 The stock price of Factset Research Systems Inc is = 447.72 $
+11-30-2022-16:30:28 The stock price of Factset Research Systems Inc is = 447.53 $
+11-30-2022-16:31:28 The stock price of Factset Research Systems Inc is = 447.50 $
+11-30-2022-16:32:28 The stock price of Factset Research Systems Inc is = 447.61 $
+11-30-2022-16:29:28 The stock price of Factset Research Systems Inc is = 447.53 $

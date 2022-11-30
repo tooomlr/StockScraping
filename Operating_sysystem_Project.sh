@@ -6,12 +6,11 @@ url='https://www.cnbc.com/quotes/FDS?qsearchterm=fds'
 output=price.txt
 #Function for grep and save data
 function strip_html(){
-  grep -oP '(?<=<span class="QuoteStrip-lastPrice").*?(?=</span>)' $output >temp.txt 
-  sed -i 's/[^>]*>//g' temp.txt >$output
-  sed -ni '1p' temp.txt >$output
+  grep -oP '(?<=<span class="QuoteStrip-lastPrice").*?(?=</span>)' $output >> temp.txt 
+  sed -i 's/[^>]*>//g' temp.txt >> $output
+  sed -ni '1p' temp.txt >> $output
   cp temp.txt $output
   rm temp.txt
-
 }
 
 #Function Print
@@ -21,7 +20,9 @@ function print(){
       val=$price
   done <$output
    
-   message="$current_hour The stock price of Factset Research Systems Inc is = $val $ "
+   message="$current_hour The stock price of Factset Research Systems Inc is = $val $ " 
+
+  echo $message >> logs.txt
    curl --data chat_id=$ID_TELEGRAM --data-urlencode "text= $message" "https://api.telegram.org/bot$TOKEN/sendMessage?parse_mode=HTML" 
  }
 
@@ -32,6 +33,7 @@ touch $output temp.txt
 curl -o $output $url 
 strip_html  
 print
+cp $output dailyRecap.txt
 fi
 }
 
@@ -44,4 +46,3 @@ print
 day
 sleep 60
 done
-
